@@ -64,14 +64,14 @@ const EncryptionAndDecryptionModal = (props) => {
   }, [encryptValidator, toEncryptText, scrollToTop, encryptor, key, hasKey]);
 
   const requestDecrypt = useCallback(() => {
-    const result = decryptValidator(toDecryptText, hasKey, key);
+    const result = decryptValidator(toDecryptText, hasKey, key, encryptedText);
     if (!result.success) {
       scrollToTop();
       dispatch({ type: 'validation-error', message: result.message });
     } else {
       dispatch({ type: 'request-decrypted-text', decryptor: decryptor });
     }
-  }, [decryptValidator, toDecryptText, scrollToTop, decryptor, key, hasKey]);
+  }, [decryptValidator, toDecryptText, scrollToTop, decryptor, key, hasKey, encryptedText]);
 
   const inputToEncryptText = useCallback(e => dispatch({
     type: 'input-to-encrypt-text', text: e.target.value

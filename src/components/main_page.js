@@ -1,5 +1,4 @@
 import React, { useReducer, useCallback } from 'react';
-import Form from 'semantic-ui-react/dist/commonjs/collections/Form';
 import { FUNCTION_NAMES } from '../params';
 import FunctionModalSelector from './function_modal_selector';
 import styled from 'styled-components';
@@ -37,23 +36,21 @@ const MainPage = (props) => {
   return (
     <Wrapper>
       <Header>HEAM</Header>
-      <Form>
-        <Label>Select one of these functions to start:</Label>
-        <FunctionsWrapper>
-          {FUNCTION_NAMES.map(f =>
-            <FunctionWrapper key={f.name} onClick={() => setFunctionName(f.name)}>
-              <FunctionField name={f.name} logo={f.logo} desc={f.desc} />
-            </FunctionWrapper>
-          )}
-        </FunctionsWrapper>
-      </Form>
+      <Label>Select one of these functions to start:</Label>
+      <FunctionsWrapper>
+        {FUNCTION_NAMES.map(f =>
+          <FunctionWrapper key={f.name} onClick={() => setFunctionName(f.name)}>
+            <FunctionField name={f.name} logo={f.logo} desc={f.desc} />
+          </FunctionWrapper>
+        )}
+      </FunctionsWrapper>
       <FunctionModalSelector isOpen={modalOpen} functionName={functionName} finish={finishModal} />
     </Wrapper>
   );
 };
 
 const FunctionWrapper = styled.div`
-
+  margin: 40px;
 `;
 
 const Wrapper = styled.div`
@@ -67,10 +64,10 @@ const Wrapper = styled.div`
 
 const FunctionsWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 85vw;
   align-items: center;
-  width: 100%;
-  padding: 35px;
+  padding-left: 60px;
 `;
 
 const Label = styled.div`
@@ -79,6 +76,7 @@ const Label = styled.div`
   font-size: 1.9em;
   margin-top: 50px;
   font-style: italic;
+  color: #ffffff;
 `;
 
 const Header = styled.h1`

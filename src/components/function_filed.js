@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import background from '../resources/Background_small.png';
-import { TRANSITION_DURATION, RECTANGLE_HEIGHT, INCREASE_WHEN_HOVER, RECTANGLE_WIDTH } from "./ui_params";
+import { TRANSITION_DURATION, RECTANGLE_HEIGHT, INCREASE_WHEN_HOVER, RECTANGLE_WIDTH } from './ui_params';
 
 const FunctionField = (props) => {
   const [showDesc, setShowDesc] = useState(false);
