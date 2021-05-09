@@ -20,7 +20,7 @@ import {
 } from '../encrypting_algo_functions/vernam/vernam_cipher';
 import vernamLogo from '../resources/vernam.svg';
 import {
-  rsa_decrypt,
+  rsa_decrypt, RSA_DESC_LONG,
   rsa_encrypt,
   rsa_validate_decrypt,
   rsa_validate_encrypt
@@ -77,9 +77,9 @@ const FunctionModalSelector = (props) => {
       );
     case 'RSA':
       return (
-        <EncryptionAndDecryptionModal {...commonProps}
+        <EncryptionAndDecryptionModal {...commonProps} hasKey
           decryptor={rsa_decrypt} encryptor={rsa_encrypt} encryptValidator={rsa_validate_encrypt}
-          decryptValidator={rsa_validate_decrypt} logo={vernamLogo} longDesc={VERNAM_DESC_LONG}
+          decryptValidator={rsa_validate_decrypt} logo={vernamLogo} longDesc={RSA_DESC_LONG}
         />
       );
     case 'AES':

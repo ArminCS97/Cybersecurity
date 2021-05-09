@@ -10,7 +10,7 @@ import vernemLogo from '../src/resources/vernam.svg';
 import rsaLogo from '../src/resources/RSA.svg';
 import aesLogo from '../src/resources/AES.svg';
 import { VERNAM_DESC } from './encrypting_algo_functions/vernam/vernam_cipher';
-import { RSAR_DESC } from './encrypting_algo_functions/rsa';
+import { RSA_DESC } from './encrypting_algo_functions/rsa';
 import { AES_DESC } from './encrypting_algo_functions/aes';
 import { RAIL_FENCE_DESC } from "./encrypting_algo_functions/rail_fence/rail_fence";
 
@@ -21,7 +21,7 @@ export const FUNCTION_NAMES = [
   { name: 'salt cipher', desc: SALT_DESC, logo: saltLogo },
   { name: 'vigenere', desc: VIGENERE_DESC, logo: vigenereLogo },
   { name: 'vernam', desc: VERNAM_DESC, logo: vernemLogo },
-  { name: 'RSA', desc: RSAR_DESC, logo: rsaLogo },
+  { name: 'RSA', desc: RSA_DESC, logo: rsaLogo },
   { name: 'AES', desc: AES_DESC, logo: aesLogo },
   { name: 'rail fence', desc: RAIL_FENCE_DESC, logo: aesLogo }
 ];

@@ -7,9 +7,6 @@ export function aes_validate_encrypt(word, hasKey, key) {
   if (!key) {
     return { success: false, message: 'Input your key please.' };
   }
-  if (key % 8 !== 0) {
-    return { success: false, message: 'The key has to be a multiple of 8.' }
-  }
   return { success: true };
 }
 

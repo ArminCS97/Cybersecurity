@@ -41,5 +41,5 @@ export function rsa_decrypt(message, key) {
   return nodeRsa.decrypt(message, 'utf8');
 }
 
-export const RSAR_DESC = 'Vigenere Cipher is a method of encrypting alphabetic text.'
-export const RSAR_DESC_LONG = 'gdghdhg';
+export const RSA_DESC = 'Vigenere Cipher is a method of encrypting alphabetic text.'
+export const RSA_DESC_LONG = 'gdghdhg';
