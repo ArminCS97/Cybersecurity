@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import modalBackground from '../resources/background_for_modal.png';
 import { RECTANGLE_HEIGHT, MODAL_HEIGHT, MODAL_WIDTH, POPUP_STYLES, RECTANGLE_WIDTH } from './ui_params';
 import { Popup } from 'semantic-ui-react';
+import { FUNCTION_NAMES } from '../params';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -130,8 +131,7 @@ const EncryptionAndDecryptionModal = (props) => {
               </FieldSeparator>
             </Form>
           </div>
-          <Desc logo={logo} functionName={functionName} longDesc={longDesc}
-            modalHasExtraField={functionName === 'vigenere'} />
+          <Desc logo={logo} functionName={functionName} longDesc={longDesc} hasKey={hasKey} />
         </Modal.Content>
       </ModalWrapper>
     </Modal>
@@ -159,7 +159,7 @@ const ErrorMessage = styled.p`
 `;
 
 const Desc = (props) => (
-  <DescWrapper modalHasExtraField={props.modalHasExtraField}>
+  <DescWrapper modalHasExtraField={props.hasKey}>
     <DescAndFunctionWrapper>
       <DescLogo src={props.logo} alt={props.functionName} />
       <FunctionName>{props.functionName}</FunctionName>
