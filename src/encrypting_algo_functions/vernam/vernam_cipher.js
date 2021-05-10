@@ -58,18 +58,6 @@ export function vernam_validate(word, hasKey, key) {
   if (keyAlphabet !== txtAlphabet) {
     return { success: false, message: 'Key and text alphabets don\'t match.' };
   }
-  // for (let i = 0; i < txt.length; i++) {
-  //   if (txt.charAt(i) === "ß") { // ignore parsed whitespace identifiers (e.g. helloßworld)
-  //     cipher.push("ß");
-  //   } else {
-  //     let txtChar = txt.charAt(i);
-  //     let txtIndex = alphabet.indexOf(txtChar);
-  //     let keyChar = key.charAt(i);
-  //     let keyIndex = alphabet.indexOf(keyChar);
-  //     if (txtIndex === -1 || keyIndex === -1) {
-  //       showMessage("Key and text alphabets don't match.", "error");
-  //       return false;
-  //     }
   return { success: true };
 }
 
@@ -136,7 +124,12 @@ export function vernam_decrypt(word, key) {
   return plaintext;
 }
 
-export const VERNAM_DESC = "vernam – It uses a simple algorithm: \n1.Treat each plain text character as a number in " +
-  "increasing sequence (A=0, B=1, …Z=25). ... "
+export const VERNAM_DESC = "The Vernam Cipher is an algorithm invented in 1917 to encrypt teletype (TTY) messages." +
+  "a symmetric cipher patented July 22, 1919";
 
-export const VERNAM_DESC_LONG = 'hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj';
+export const VERNAM_DESC_LONG = 'Vernam Cipher – It uses a simple algorithm:\n' +
+  '1\tTreat each plain text character as a number in increasing sequence (A=0, B=1, …Z=25).\n' +
+  '2\tDo the same for each character of key.\n' +
+  '3\tAdd each number corresponding to plain text alphabet and key.\n' +
+  '4\tIf sum produced greater than 26, subtract 26 form it.\n' +
+  '5\tTranslate each number of sum back to alphabet, it gives our cipher text.\n';

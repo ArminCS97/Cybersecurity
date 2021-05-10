@@ -9,10 +9,15 @@ import vigenereLogo from '../src/resources/Vigenere.svg';
 import vernemLogo from '../src/resources/vernam.svg';
 import rsaLogo from '../src/resources/RSA.svg';
 import aesLogo from '../src/resources/AES.svg';
+import railLogo from '../src/resources/rail-fence.png';
+import desLogo from '../src/resources/des_icon.svg';
+import rabbitLogo from '../src/resources/rabbit_icon.svg';
 import { VERNAM_DESC } from './encrypting_algo_functions/vernam/vernam_cipher';
 import { RSA_DESC } from './encrypting_algo_functions/rsa';
 import { AES_DESC } from './encrypting_algo_functions/aes';
-import { RAIL_FENCE_DESC } from "./encrypting_algo_functions/rail_fence/rail_fence";
+import { RAIL_FENCE_DESC } from './encrypting_algo_functions/rail_fence/rail_fence';
+import { RABBIT_DESC } from "./encrypting_algo_functions/rabbit";
+import { DES_DESC } from "./encrypting_algo_functions/des";
 
 // The function names must be unique.
 export const FUNCTION_NAMES = [
@@ -23,5 +28,7 @@ export const FUNCTION_NAMES = [
   { name: 'vernam', desc: VERNAM_DESC, logo: vernemLogo },
   { name: 'RSA', desc: RSA_DESC, logo: rsaLogo },
   { name: 'AES', desc: AES_DESC, logo: aesLogo },
-  { name: 'rail fence', desc: RAIL_FENCE_DESC, logo: aesLogo }
+  { name: 'rail fence', desc: RAIL_FENCE_DESC, logo: railLogo },
+  { name: 'rabbit', desc: RABBIT_DESC, logo: rabbitLogo },
+  { name: 'DES', desc: DES_DESC, logo: desLogo }
 ];

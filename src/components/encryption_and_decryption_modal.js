@@ -170,7 +170,8 @@ const Desc = (props) => (
 
 const Description = styled.p`
   margin: 18px;
-  font-size: 2.4em;
+  font-size: 2.1em;
+  line-height: 1.5em;
 `;
 
 const DescAndFunctionWrapper = styled.div`

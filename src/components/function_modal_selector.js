@@ -31,12 +31,28 @@ import {
   aes_encrypt,
   aes_validate_decrypt,
   aes_validate_encrypt
-} from "../encrypting_algo_functions/aes";
+} from '../encrypting_algo_functions/aes';
 import {
-  rail_fence_decrypt,
+  rail_fence_decrypt, RAIL_FENCE_DESC_LONG,
   rail_fence_encrypt,
   rail_fence_validate
-} from "../encrypting_algo_functions/rail_fence/rail_fence";
+} from '../encrypting_algo_functions/rail_fence/rail_fence';
+import railLogo from '../resources/rail-fence.png';
+import desLogo from '../resources/des_icon.svg';
+import rabbitLogo from '../resources/rabbit_icon.svg';
+import {
+  rabbit_decrypt,
+  RABBIT_DESC_LONG,
+  rabbit_encrypt,
+  rabbit_validate_decrypt, rabbit_validate_encrypt
+} from "../encrypting_algo_functions/rabbit";
+import {
+  des_decrypt,
+  DES_DESC_LONG,
+  des_encrypt,
+  des_validate_decrypt,
+  des_validate_encrypt
+} from "../encrypting_algo_functions/des";
 
 const FunctionModalSelector = (props) => {
   const { functionName, isOpen, finish } = props;
@@ -93,7 +109,21 @@ const FunctionModalSelector = (props) => {
       return (
         <EncryptionAndDecryptionModal {...commonProps}
           decryptor={rail_fence_decrypt} encryptor={rail_fence_encrypt} encryptValidator={rail_fence_validate}
-          decryptValidator={rail_fence_validate} logo={vernamLogo} longDesc={AES_DESC_LONG}
+          decryptValidator={rail_fence_validate} logo={railLogo} longDesc={RAIL_FENCE_DESC_LONG}
+        />
+      );
+    case 'rabbit':
+      return (
+        <EncryptionAndDecryptionModal {...commonProps} hasKey
+          decryptor={rabbit_decrypt} encryptor={rabbit_encrypt} encryptValidator={rabbit_validate_encrypt}
+          decryptValidator={rabbit_validate_decrypt} logo={rabbitLogo} longDesc={RABBIT_DESC_LONG}
+        />
+      );
+    case 'DES':
+      return (
+        <EncryptionAndDecryptionModal {...commonProps} hasKey
+          decryptor={des_decrypt} encryptor={des_encrypt} encryptValidator={des_validate_encrypt}
+          decryptValidator={des_validate_decrypt} logo={desLogo} longDesc={DES_DESC_LONG}
         />
       );
     default:

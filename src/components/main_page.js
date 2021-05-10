@@ -54,7 +54,6 @@ const FunctionWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  position: fixed;
   height: 1000px;
   width: 100vw;
   text-align: center;
@@ -65,18 +64,18 @@ const Wrapper = styled.div`
 const FunctionsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 85vw;
+  width: 100%;
   align-items: center;
-  padding-left: 60px;
+  padding-left: 80px;
 `;
 
 const Label = styled.div`
   margin-bottom: 60px;
   font-weight: 700;
-  font-size: 1.9em;
+  font-size: 2.1em;
   margin-top: 50px;
   font-style: italic;
-  color: #ffffff;
+  color: #000;
 `;
 
 const Header = styled.h1`

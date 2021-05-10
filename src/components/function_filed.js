@@ -53,7 +53,7 @@ const RectangularPage = styled.div`
   background-image: url(${background});
   border: 2px solid #BFBFBF;
   border-radius: 25px;
-  filter: brightness(175%);
+  filter: brightness(100%);
   transition: width ${TRANSITION_DURATION}, height ${TRANSITION_DURATION};
   &:hover {
     width: calc(${RECTANGLE_WIDTH} + ${INCREASE_WHEN_HOVER});
